@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: tfps75psk-go 
+  janus-idp.io/tekton: tfps75psk-go
+  backstage.io/kubernetes-id: tfps75psk-go
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: tfps75psk-go
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
